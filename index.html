@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>hello</title>
+        <script src="html_tokenizer.js"></script>
+    </head>
+    <body>
+        <button id="bt">开始</button>
+        <script type="text/javascript">
+
+            var str = '\
+            <html lang=\'cn\'>\
+                <head>\
+                    <meta charset="utf-8" />\
+                </head>\
+                <body>\
+                slslslsls\
+                <img src="hello" alt="">\
+                </body>\
+            </html>\
+            ';
+
+            console.log(str);
+            document.getElementById("bt").addEventListener('click', function() {
+                parse(str);
+            }, true)
+        </script>
+    </body>
+</html>
