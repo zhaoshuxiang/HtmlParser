@@ -3,28 +3,40 @@
     <head>
         <meta charset="utf-8" />
         <title>hello</title>
+        <script src="html_treeconstructor.js"></script>
         <script src="html_tokenizer.js"></script>
+        <style type="text/css">
+            #source{
+                width: 500px;
+                height: 200px;
+            }
+        </style>
     </head>
     <body>
-        <button id="bt">开始</button>
+        <textarea id="source"></textarea>
+        <button id="bt">解析</button>
         <script type="text/javascript">
 
             var str = '\
-            <html lang=\'cn\'>\
-                <head>\
-                    <meta charset="utf-8" />\
-                </head>\
-                <body>\
-                slslslsls\
-                <img src="hello" alt="">\
-                </body>\
-            </html>\
-            ';
+<html lang=\'cn\'>\n\
+    <head>\n\
+        <meta charset="utf-8" />\n\
+    </head>\n\
+    <body>\n\
+    slslslsls\n\
+    <img src="hello" alt="">\n\
+    </body>\n\
+</html>\n';
 
-            console.log(str);
-            document.getElementById("bt").addEventListener('click', function() {
-                parse(str);
-            }, true)
+
+            var s = document.getElementById('source');
+            var b = document.getElementById("bt");
+
+            s.value = str;
+
+            b.addEventListener('click', function() {
+                parse(s.value);
+            }, true);
         </script>
     </body>
 </html>

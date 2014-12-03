@@ -13,6 +13,8 @@
 var token;
 var attrToken;
 
+var domTreeBuilder = new HTMLDOMTreeBuilder();
+
 // 解析字符串
 function parse(s) {
     var i = 0,
@@ -38,6 +40,7 @@ function EndTagToken() {}
 function AttributeToken() {}
 
 function emitToken(t) {
+    domTreeBuilder.build(t);
     console.log(t);
 }
 

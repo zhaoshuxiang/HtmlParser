@@ -5,7 +5,15 @@
  *
  */
 
+var HTMLDOMTreeBuilder = (function() {
 
-exports.build = function () {
+    function HTMLDOMTreeBuilder() {
 
-};
+    }
+
+    HTMLDOMTreeBuilder.prototype.build = function(t) {
+        console.log('**********')
+    };
+
+    return HTMLDOMTreeBuilder;
+})();
